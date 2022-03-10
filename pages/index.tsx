@@ -17,7 +17,7 @@ export default function Home() {
     // const resp = await res.json()
     // console.log(resp);
     
-    const response = await axios.post('http://localhost:3001/api/user/login', {
+    const response = await axios.post('https://dmtt-api.herokuapp.com/api/user/login', {
       email: 'robson.dev9@gmail.com',
       password: '123456'
     })
