@@ -14,7 +14,7 @@ export default function Home() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados)
     })
-    const resp = res.json()
+    const resp = await res.json()
     console.log(resp);
     
     // axios.post('https://dmtt-api.herokuapp.com/api/user/login', {
