@@ -4,16 +4,25 @@ import styles from '../styles/Home.module.css'
 import axios from 'axios'
 
 export default function Home() {
+    const dados = {email: 'robson.dev9@gmail.com',
+    password: '123456'}
 
-  function acessar() {
+  async function acessar() {
     console.log('acessou');
+    const res = await fetch('https://dmtt-api.herokuapp.com/api/user/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+    const resp = res.json()
+    console.log(resp);
     
-    axios.post('https://dmtt-api.herokuapp.com/api/user/login',{
-      email: 'robson.dev9@gmail.com',
-      password: '123456'
-    }).then(res => console.log(res)).catch(e => console.log(e))
-    
-    
+    // axios.post('https://dmtt-api.herokuapp.com/api/user/login', {
+    //   email: 'robson.dev9@gmail.com',
+    //   password: '123456'
+    // }).then(res => console.log(res)).catch(e => console.log(e))
+
+
   }
   return (
     <div className={styles.container}>
@@ -27,7 +36,7 @@ export default function Home() {
 
       <button onClick={acessar}>Acessar</button>
 
-     
+
     </div>
   )
 }
