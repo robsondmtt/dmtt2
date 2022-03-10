@@ -8,20 +8,14 @@ export default function Home() {
     password: '123456'}
 
   async function acessar() {
-    console.log('acessou');
-    const res = await fetch('https://dmtt-api.herokuapp.com/api/user/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(dados)
-    })
-    const resp = await res.json()
-    console.log(resp);
     
-    // axios.post('https://dmtt-api.herokuapp.com/api/user/login', {
-    //   email: 'robson.dev9@gmail.com',
-    //   password: '123456'
-    // }).then(res => console.log(res)).catch(e => console.log(e))
-
+    
+    const response = await axios.post('https://dmtt-api.herokuapp.com/api/user/login', {
+      email: 'robson.dev9@gmail.com',
+      password: '123456'
+    })
+    console.log(response);
+    
 
   }
   return (
