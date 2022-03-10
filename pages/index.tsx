@@ -8,7 +8,7 @@ export default function Home() {
   function acessar() {
     console.log('acessou');
     
-    axios.post('https://dmtt-api.herokuapp.com/user/login',{
+    axios.post('https://dmtt-api.herokuapp.com/api/user/login',{
       email: 'robson.dev9@gmail.com',
       password: '123456'
     }).then(res => console.log(res)).catch(e => console.log(e))
