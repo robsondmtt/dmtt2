@@ -7,7 +7,7 @@ export function getAPIClient(ctx?: any) {
   const token = Cookies.get('admin-auth')
   
   const api = axios.create({
-    baseURL: 'http://localhost:3001'
+    baseURL: 'https://dmtt-api.herokuapp.com/'
   })
 
   api.interceptors.request.use(config => {
